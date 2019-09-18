@@ -1,0 +1,2 @@
+This priject implements thread-safe graph (CopyOnWriteGraph) and simple non thread-safe grapg SimpleGraph.
+Each Edge in graph could be either uni-directional or bi-directional.
