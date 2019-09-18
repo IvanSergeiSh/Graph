@@ -57,26 +57,26 @@ public class DeepSearchStrategyTest {
 	private Map<String, List<Edge<String>>> getMap() {
 		Map<String, List<Edge<String>>> map = new HashMap<>();
 		map.put("1", new ArrayList<Edge<String>>(Arrays.asList(
-				new SimpleEdge<String>("1","2",true),
-				new SimpleEdge<String>("1","7",true))));
+				new SimpleEdge<String>("1", "2", true),
+				new SimpleEdge<String>("1", "7", true))));
 		map.put("2", new ArrayList<Edge<String>>(Arrays.asList(
-				new SimpleEdge<String>("1","2",true),
-				new SimpleEdge<String>("2","3",true),
-				new SimpleEdge<String>("2","4",true))));
+				new SimpleEdge<String>("1", "2", true),
+				new SimpleEdge<String>("2", "3", true),
+				new SimpleEdge<String>("2", "4", true))));
 		map.put("3", new ArrayList<Edge<String>>(Arrays.asList(
-				new SimpleEdge<String>("3","5",true),
-				new SimpleEdge<String>("2","3",true))));
+				new SimpleEdge<String>("3", "5", true),
+				new SimpleEdge<String>("2", "3", true))));
 		map.put("4", new ArrayList<Edge<String>>(Arrays.asList(
-				new SimpleEdge<String>("4","5",true),
-				new SimpleEdge<String>("2","4",true))));
+				new SimpleEdge<String>("4", "5", true),
+				new SimpleEdge<String>("2", "4", true))));
 		map.put("5", new ArrayList<Edge<String>>(Arrays.asList(
-				new SimpleEdge<String>("5","6",true),
-				new SimpleEdge<String>("3","5",true),
-				new SimpleEdge<String>("4","5",true))));
+				new SimpleEdge<String>("5", "6", true),
+				new SimpleEdge<String>("3", "5", true),
+				new SimpleEdge<String>("4", "5", true))));
 		map.put("6", new ArrayList<Edge<String>>((Arrays.asList(
-				new SimpleEdge<String>("5","6",true)))));
+				new SimpleEdge<String>("5", "6", true)))));
 		map.put("7", new ArrayList<Edge<String>>((Arrays.asList(
-				new SimpleEdge<String>("1","7",true)))));
+				new SimpleEdge<String>("1", "7", true)))));
 		return map;
 	}
 	
@@ -140,13 +140,13 @@ public class DeepSearchStrategyTest {
     @Test
     public void testfindNonVisitedNextLevelVertexUniDirectionalCase() {
 		List<Edge<String>> edges = new ArrayList<Edge<String>>(Arrays.asList(new SimpleEdge<String>("1","2",false),
-				new SimpleEdge<String>("2","3",false),
-				new SimpleEdge<String>("3","4",false),
-				new SimpleEdge<String>("2","5",false)));
+				new SimpleEdge<String>("2", "3", false),
+				new SimpleEdge<String>("3", "4", false),
+				new SimpleEdge<String>("2", "5", false)));
 		List<Edge<String>> visitedEdges = new ArrayList<Edge<String>>(Arrays.asList(new SimpleEdge<String>("1","2",false),
-				new SimpleEdge<String>("2","3",false),
-				new SimpleEdge<String>("3","4",false),
-				new SimpleEdge<String>("2","5",false)));		
+				new SimpleEdge<String>("2", "3", false),
+				new SimpleEdge<String>("3", "4", false),
+				new SimpleEdge<String>("2", "5", false)));		
 		Assert.assertTrue(STRATEGY.findNonVisitedNextLevelVertex(edges, visitedEdges, "1").size() == 0);
 		Assert.assertTrue(STRATEGY.findNonVisitedNextLevelVertex(edges, visitedEdges, "2").size() == 0);
 		visitedEdges = new ArrayList<Edge<String>>(Arrays.asList(new SimpleEdge<String>("1","2",false)));

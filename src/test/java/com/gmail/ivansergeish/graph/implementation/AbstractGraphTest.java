@@ -13,7 +13,6 @@ public abstract class AbstractGraphTest {
     List<String> vertexes;
     List<Edge<String>> edges;
     protected abstract AbstractGraph<String> getGraph();
-    //protected abstract Graph<String> prepareGraph();
     
 	protected List<String> getTestVertexes() {
 		return new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6"));
@@ -25,24 +24,16 @@ public abstract class AbstractGraphTest {
 		return graph;
 	}
 
-//	private List<Edge<String>> getOKTestEdges() {
-//		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1","2", true), new SimpleEdge<>("2", "3", true)));
-//	}
-	
 	private List<Edge<String>> getDuplicatedTestEdges() {
-		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1","2", true), new SimpleEdge<>("1", "2", true)));
+		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1", "2", true), new SimpleEdge<>("1", "2", true)));
 	}	
 	
 	private List<Edge<String>> getDuplicatedReverseOrderTestEdges() {
 		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1", "2", true), new SimpleEdge<>("2", "1", true)));
 	}
 
-//	private List<Edge<String>> getNonDuplicatedReverseOrderTestEdges() {
-//		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1", "2", false), new SimpleEdge<>("2", "1", false)));
-//	}
-
 	protected List<Edge<String>> getUniDirectionalTestEdges() {
-		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1","2", false),new SimpleEdge<>("2","3", false)));
+		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1", "2", false), new SimpleEdge<>("2","3", false)));
 	}
 	
 	protected void fillGraph(Graph<String> graph) {
@@ -63,12 +54,8 @@ public abstract class AbstractGraphTest {
 	}	
 	
 	private List<Edge<String>> getBiDirectionalTestEdges() {
-		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1","2", true),new SimpleEdge<>("2","3", true)));
+		return new ArrayList<>(Arrays.asList(new SimpleEdge<>("1", "2", true), new SimpleEdge<>("2","3", true)));
 	}	
-	
-//	private List<Edge<String>> getNullTestEdge() {
-//		return  new ArrayList<>(Arrays.asList(null));
-//	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testAddNullVertex() {
@@ -108,7 +95,7 @@ public abstract class AbstractGraphTest {
 		graph.addEdge(edges.get(0));
 		graph.addEdge(edges.get(1));
 	}
-    //TODO 
+ 
 	@Test
 	public void testAddBiDirectionalEdge() {
 		AbstractGraph<String> graph = getGraph();

@@ -54,7 +54,7 @@ public class DeepSearchStrategyUniDirectionalTest {
 		map = getMap();
 		
 	}
-	
+
 	private Map<String, List<Edge<String>>> getMap() {
 		Map<String, List<Edge<String>>> map = new HashMap<>();
 		map.put("1", new ArrayList<Edge<String>>(Arrays.asList(
@@ -73,8 +73,7 @@ public class DeepSearchStrategyUniDirectionalTest {
 		map.put("7", new ArrayList<Edge<String>>((Collections.emptyList())));
 		return map;
 	}
-	
-	
+
 	@Test
 	public void testDfsBiDirectional1() {
 		List<Edge<String>> path = STRATEGY.search(vertexes.get(0), vertexes.get(6), map);
@@ -84,12 +83,9 @@ public class DeepSearchStrategyUniDirectionalTest {
 		path = STRATEGY.search("1", "7", map);
 		Assert.assertEquals(1, path.size());
 	}
-	
+
 	@Test(expected = NoSuchElementException.class)
 	public void testUnableToFindPath() {
-		path = STRATEGY.search("7", "1", map);
+		STRATEGY.search("7", "1", map);
 	}
-	
-	 
-
 }

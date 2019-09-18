@@ -48,6 +48,7 @@ public class CopyOnWriteGraphCuncurrentTest {
         	this.latch = latch;
         	this.graph = graph;
         }
+        
 		@Override
 		public void run() {
 			latch.countDown();

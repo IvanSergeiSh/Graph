@@ -3,19 +3,11 @@ package com.gmail.ivansergeish.graph.implementation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
-
 import com.gmail.ivansergeish.graph.api.Edge;
-import com.gmail.ivansergeish.graph.api.Graph;
-
-
 
 public class SimpleGraphTest extends AbstractGraphTest{
 
-	//private List<String> vertexes;
-	//List<Edge<String>> edges;
 	@SuppressWarnings("unused")
 	private List<Edge<String>> path;
 	
@@ -54,17 +46,4 @@ public class SimpleGraphTest extends AbstractGraphTest{
 				new SimpleEdge<String>("2","3",true),
 				new SimpleEdge<String>("3","5",true)));		
 	}
-	
-	
-	 
-//	@Test
-//	public void testDfsBiDirectional() {
-//		Graph<String> graph = prepareGraph();
-//		List<Edge<String>> path = graph.getPath(vertexes.get(0), vertexes.get(6));
-//		Assert.assertTrue(path.size() == 1);
-//		path = graph.getPath(vertexes.get(0), vertexes.get(5));
-//		Assert.assertTrue(path.size() == 4);
-//		path = graph.getPath("2", "7");
-//		Assert.assertEquals(2, path.size());
-//	}
 }
